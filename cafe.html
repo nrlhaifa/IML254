@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Cafe Hunting </title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Reset default margin/padding body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;          
+  margin: 0;              
+  padding: 10px 16px;    
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;            
+  margin: 0;              
+  padding: 10px 16px;    
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif; 
+  font-size: 20px;             
+  font-weight: 700;             
+  color: #FCEB72;              
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container untuk nama + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* Nama website di kiri */
+.site-name {
+  position: absolute;
+  left: 20px; 
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative;   
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+/* Banner */
+    .banner {
+      width: 100%;
+      height: 300px;
+      background-image: url("image/coffee.jpg"); 
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .banner::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .banner-text {
+      position: relative;
+      text-align: center;
+      color: #FCEB72;
+      z-index: 1;
+    }
+    .banner-text h1 {
+      font-size: 40px;
+      margin: 0;
+    }
+    .banner-text p {
+      font-size: 18px;
+    }
+
+    /* Intro */
+    .intro {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+  body {
+  margin: 0;
+  padding: 0;
+  background: grey;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+/* Section */
+.cafe-section {
+  margin: 40px auto;
+  max-width: 100%;
+  color: white;
+}
+
+.cafe-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Cinzel', serif;
+  color: #FCEB72;
+}
+
+/* Flex Layout: scrollable, first 3 */
+.cafe-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;       
+  scrollbar-width: none;
+  padding: 10px;
+  max-width: 850px;      
+  margin: 0 auto;         
+  justify-content: flex-start;
+}
+.cafe-grid::-webkit-scrollbar {
+  display: none;          
+}
+
+
+/* Card Style */
+.cafe-card {
+  flex: 0 0 250px;       
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cafe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.6);
+}
+
+/* Image */
+.cafe-card img {
+  width: 150px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Link */
+.cafe-card a {
+  color: #FCEB72;
+  text-decoration: none;
+  font-weight: bold;
+}
+.cafe-card a:hover {
+  text-decoration: underline;
+} 
+
+
+ /* Gallery */
+    .gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  position: relative;
+  width: 250px; 
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D; 
+  color: white;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 28px;
+  font-family: 'Cinzel', serif;
+  color: #FCEB72;  
+  margin: 30px 0 20px;
+}
+
+.gallery-item {
+  text-align: center;
+  color: #FCEB72; 
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+ /* Top Picks dengan Fade */
+    .top-picks {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+      font-size: 18px;
+      color: #FCEB72;
+    }
+    .top-gallery {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pick {
+      text-align: center;
+      max-width: 280px;
+    }
+    .pick img {
+      width: 100%;
+      border-radius: 10px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .pick img:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    .pick p {
+      margin-top: 10px;
+      color: #FCEB72;
+    }
+
+
+/* Tips Section */
+.tips {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 25px;
+background:#6082B6;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tips h2 {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #FFD700; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tips li {
+  margin: 12px 0;
+  padding: 10px 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  position: relative;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Icon bullet */
+.tips li::before {
+  content: "✔"; 
+  color: #FFD700;
+  font-weight: bold;
+  position: absolute;
+  left: -25px;
+}
+
+
+
+
+
+
+
+
+
+
+    /* Closing Note */
+    .closing-note {
+      text-align: center;
+      margin: 50px auto;
+      font-style: italic;
+      font-size: 20px;
+      color: #fff;
+    }
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer {
+  background-color: #000000; 
+  color: grey;           
+  text-align: center;
+  padding: 10px;
+  margin: 0;                 
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #ffffff;          
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+</style>
+</head>
+
+
+<body bgcolor="grey">
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="index.html">Haifa.Hamzah</a>
+    </div>
+
+  <!-- Breadcrumb menu di tengah -->
+<ul class="breadcrumb" align="center">
+   <li><a href="index.html">Home</a></li>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href="family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="interests/novel.html">Novel</a></li>
+      <li><a href="interests/music.html">Music</a></li>
+      <li><a href="interests/movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="friends.html">Friends</a></li>
+  <li><a href="cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+
+
+
+<!-- Banner -->
+  <div class="banner">
+    <div class="banner-text">
+      <h1>My Café Hunting Journey</h1>
+      <p>Exploring cozy cafés and unique flavors</p>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <p>“Café hunting means more than coffee — it’s about discovering new places, unique flavors, and the stories each café holds.”
+</p>
+  </div>
+
+ <body>
+  <div class="cafe-section">
+    <h2>Café Hunting List</h2>
+    <div class="cafe-grid">
+      
+      <!-- Card 1 -->
+      <div class="cafe-card">
+        <img src="image/richiamo.jpg" alt="Richiamo Cafe">
+        <h3>Richiamo Cafe</h3>
+        <p>📍 Melaka</p>
+        <p>Coffee |  Tea | Noodle Series </p>
+        <p>⭐⭐⭐⭐</p>
+        <a href="https://officialcafeA.com" target="_blank">Visit Site</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="cafe-card">
+        <img src="image/lily.jpg" alt="Lily Coffee">
+        <h3>Lily Coffee</h3>
+        <p>📍 Kedah</p>
+        <p>Milkshake | Sandwiches | Rice | Snacks </p>
+        <p>⭐⭐⭐</p>
+        <a href="https://officialcafeB.com" target="_blank">Visit Site</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="cafe-card">
+        <img src="image/malaiqa.jpg" alt="Malaiqa Cafe">
+        <h3>Malaiqa By Gula Cakery</h3>
+        <p>📍 Melaka</p>
+        <p>Coffee | Desserts | Nibbles | Asian Dish</p>
+        <p>⭐⭐⭐</p>
+        <a href="https://gulacakery.com/malaiqa-by-gula-cakery/" target="_blank">Visit Site</a>
+      </div>
+  </div>
+
+
+
+<br>
+<br>
+<!-- Tajuk Gallery -->
+<h2 class="gallery-title"> Moments Bites</h2>
+
+  <!-- Gallery -->
+ <div class="gallery">
+  <!-- Item 1 -->
+  <div class="container">
+    <img src="image/dessert.jpg" alt="Malaiqa" class="image">
+    <div class="middle">
+      <div class="text">Malaiqa's dessert</div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="container">
+    <img src="image/cake.jpg" alt="Richiamo Cafe" class="image">
+    <div class="middle">
+      <div class="text">Richiamo Cafe</div>
+    </div>
+  </div>
+
+ <!-- Item 3 -->
+  <div class="container">
+    <img src="image/nachos.jpg" alt="Lily Cafe" class="image">
+    <div class="middle">
+      <div class="text">Lily Cafe</div>
+    </div>
+  </div>
+
+</div>
+
+
+<br>
+<br>
+<br>
+  <!-- Top Picks dengan Fade -->
+  <div class="top-picks">
+    <h2>My Top Picks</h2>
+    <div class="top-gallery">
+
+      <div class="pick">
+        <img src="image/duchess.jpg" alt="Duchess Of Cake">
+        <p>⭐ Duchess Of Cake — Their brownies is savory </p>
+      </div>
+      <div class="pick">
+        <img src="image/mille.jpg" alt="La Mille Bakers">
+        <p>⭐ La Mille Bakers— Interior aesthetic for photograph and of course the pastry here scrumtious </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tips -->
+  <div class="tips">
+  <h2>💡 Café Hunting Tips</h2>
+  <ul>
+    <li>Come early in the morning to avoid the crowd.</li>
+    <li>Try the signature drink first before ordering others.</li>
+    <li>Don’t forget to take photos of the café atmosphere.</li>
+    <li>Write a short review for memories.</li>
+  </ul>
+</div>
+
+
+  <!-- Closing Note -->
+  <div class="closing-note">
+    <p>"For me, café hunting is not just about coffee, but also about memories with friends and the experience of exploring new places"</p>
+  </div>
+
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+
+
+</body>
+</html>
+
+
+

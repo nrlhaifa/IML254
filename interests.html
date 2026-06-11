@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Interests</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Reset default margin/padding body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;          
+  margin: 0;            
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;           
+  margin: 0;              
+  padding: 10px 16px;    
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif; 
+  font-size: 20px;             
+  font-weight: 700;            
+  color: #FCEB72;           
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container untuk nama + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; /* breadcrumb tetap center */
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* website name on left */
+.site-name {
+  position: absolute;
+  left: 20px; 
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative;    
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+/* Background penuh */
+.hero {
+  background: url('image/night3.jpg') no-repeat center center/cover;
+  background-size: cover; 
+  background-size: cover;
+  min-height: 100vh;   
+  width: 100%;         
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;      
+  margin: 0 auto;          
+
+}
+
+/* dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+/* Tajuk & intro */
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 35px;                 
+ font-family: 'Lucida Bright', serif;
+  color: #FCEB72;                   
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+  letter-spacing: 3px;            
+  text-transform: uppercase;       
+  margin-bottom: 20px;
+text-shadow: 0 0 10px white; 
+}
+
+.hero p {
+  font-size: 20px;                  
+  font-family: 'Georgia', serif;   
+  color: white;                 
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5); 
+  line-height: 1.6;                 
+  max-width: 700px;                 
+  margin: 0 auto 40px auto;       
+}
+
+/* Cards kategori */
+.interests-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  padding: 20px;
+  width: 200px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card a {
+  text-decoration: none;
+  font-size: 20px;
+   font-family: 'Lucida Bright', serif; 
+  font-weight: bold;
+  color: purple;                 
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); 
+  letter-spacing: 2px;             
+  text-transform: uppercase;        
+  display: block;
+  text-align: center;
+}
+
+.card a:hover {
+  color: grey;
+  text-shadow: 0 0 10px #FCEB72; 
+
+}
+
+/* Highlight section */
+.highlight {
+  background: rgba(255,255,255,0.8);
+  border-radius: 8px;
+  padding: 20px;
+  color: #333;
+}
+.highlight h2 {
+  margin-bottom: 10px;
+}
+.highlight p {
+  margin: 0;
+}
+
+.highlight h2 {
+  font-size: 25px;
+  font-family: Arial, sans-serif;   
+  color: #C41E3A;                 
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.highlight p {
+  font-size: 25px;                  
+  font-family: 'Georgia', serif;    
+  color: black;                
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5); 
+  line-height: 1.6;               
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+
+
+
+/* Footer */
+.site-footer {
+  background-color: #000000;
+  color: grey;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+.site-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+
+
+
+
+
+<body>
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="index.html">Haifa.Hamzah</a>
+    </div>
+
+  <!-- Breadcrumb menu di tengah -->
+<ul class="breadcrumb" align="center">
+   <li><a href="index.html">Home</a></li>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href="family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="interests/novel.html">Novel</a></li>
+      <li><a href="interests/music.html">Music</a></li>
+      <li><a href="interests/movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="friends.html">Friends</a></li>
+  <li><a href="cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+
+
+<audio autoplay loop hidden>
+  <source src="lofi.ogg" type="audio/ogg">
+  <source src="audio/drake.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+
+
+
+
+
+
+
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>My Interests</h1>
+    <p>Welcome to my Interests homepage. Explore the things I love — novels, music, and movies.</p>
+
+    <!-- Kategori pilihan -->
+    <div class="interests-cards">
+      <div class="card">
+        <a href="interests/novel.html">📚 Novels</a>
+      </div>
+      <div class="card">
+        <a href="interests/music.html">🎵 Music</a>
+      </div>
+      <div class="card">
+        <a href="interests/movie.html">🎬 Movies/Dramas</a>
+      </div>
+    </div>
+
+    <!-- Highlight section atas background -->
+    <div class="highlight">
+      <h2>Featured Highlight</h2>
+      <p>Currently reading: Lyrics & You by NurulJannah Usop<br>
+         Favorite playlist: my library <br>
+         Latest movie/drama I enjoyed: Veil Of Shadows (Cdrama)</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+
+</footer>
+
+
+</body>
+</html>

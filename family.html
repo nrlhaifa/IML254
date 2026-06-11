@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Family</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Reset default margin/padding body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;           
+  margin: 0;              
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif; 
+  font-size: 20px;             
+  font-weight: 700;            
+  color: #FCEB72;              
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container untuk nama + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* Nama website di kiri */
+.site-name {
+  position: absolute;
+  left: 20px; 
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative;  
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+
+
+
+
+
+
+
+/* Banner image */
+.banner {
+  width: 100%;
+  height: 450px;
+  background-image: url("image/famtoon.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+
+
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tajuk utama */
+.family-title {
+  text-align: center;
+  font-size: 36px;
+  font-family: 'Georgia', serif;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+ text-shadow: 2px 2px 5px rgba(0,0,0,0.3); 
+  margin-top: 30px;
+}
+.family-subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-style: italic;
+  color: white;
+  margin-bottom: 20px;
+}
+
+
+
+.nav-buttons {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.nav-buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  border: 2px solid #2c3e50;
+  border-radius: 8px;
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-buttons a:hover {
+  background: linear-gradient(to right, #2c3e50, #01447e);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.nav-buttons a:active {
+  background: #e74c3c;
+  border-color: #c0392b;
+  color: #fff;
+}
+
+
+
+
+/* Grid untuk card layout */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolum */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+.section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.section img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+}
+.section-content {
+  flex: 1;
+}
+.biodata-title {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 3px;
+}
+.section-content p {
+  margin: 4px 0;
+  color: #444;
+}
+
+/* Highlight bila scroll target */
+.section:target {
+  border: 2px solid blue;
+  background-color: #f0f8ff;
+  transition: background-color 0.5s ease;
+}
+
+
+/* Gallery  */
+    .gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container {
+  position: relative;
+  width: 250px; /* saiz card gallery */
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04AA6D; 
+  color: white;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 28px;
+  font-family: 'Cinzel', serif;
+  color: #FCEB72;  
+  margin: 30px 0 20px;
+}
+
+.gallery-item {
+  text-align: center;
+  color: #FCEB72;   
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+
+
+
+
+.gallery-section {
+  margin: 40px;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #FCEB72;  
+  margin-bottom: 25px;
+}
+
+/* Scroll container */
+.scroll-container {
+  background-color: #333;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+/* Card for photos */
+.scroll-item {
+  display: inline-block;
+  text-align: center;
+  margin-right: 12px;
+  width: 300px;
+}
+
+.scroll-item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.caption {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+
+.family-quote {
+  text-align: center;          
+  margin: 60px auto;           
+  font-size: 22px;            
+  font-style: italic;         
+  color: #FCEB72;              
+}
+
+
+
+
+
+/* Footer */
+.site-footer {
+  background-color: #000000;
+  color: grey;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+.site-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+
+
+
+
+<body bgcolor="grey">
+
+<body>
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="index.html">Haifa.Hamzah</a>
+    </div>
+
+
+  <!-- Breadcrumb menu di tengah -->
+<ul class="breadcrumb" align="center">
+   <li><a href="index.html">Home</a></li>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href="family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="interests/novel.html">Novel</a></li>
+      <li><a href="interests/music.html">Music</a></li>
+      <li><a href="interests/movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="friends.html">Friends</a></li>
+  <li><a href="cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+<div class="banner"></div>
+
+<h2 class="family-title">FAMILY MEMBERS</h2>
+<p class="family-subtitle">Let me introduce to you my family members</p>
+
+<!-- Navigation buttons -->
+<div class="nav-buttons">
+<div class="nav-buttons">
+  <a href="#father">Father</a>
+  <a href="#mother">Mother</a>
+  <a href="#oldest">Oldest</a>
+  <a href="#second">2nd Sibling</a>
+  <a href="#third">3rd Sibling</a>
+  <a href="#youngest">Youngest</a>
+</div>
+
+<!-- Cards grid -->
+<div class="cards-container">
+  <div id="father" class="section">
+    <img src="image/father.png" alt="Father">
+    <div class="section-content">
+      <h3 class="biodata-title">Father</h3>
+      <p><strong>Name:</strong> Hamzah Bin Mahadin</p>
+      <p><strong>Occupation:</strong> Technition</p>
+      <p><strong>Hometown:</strong> Melaka</p>
+    </div>
+  </div>
+
+  <div id="mother" class="section">
+    <img src="image/mother.jpg" alt="Mother">
+    <div class="section-content">
+      <h3 class="biodata-title">Mother</h3>
+      <p><strong>Name:</strong> Rosmini Binti Mat Aisha</p>
+      <p><strong>Occupation:</strong> Teacher</p>
+      <p><strong>Hometown:</strong> Perak</p>
+    </div>
+  </div>
+
+  <div id="oldest" class="section">
+    <img src="image/me5.jpg" alt="Oldest">
+    <div class="section-content">
+      <h3 class="biodata-title">Oldest (Me)</h3>
+      <p><strong>Name:</strong> Nurul Haifa Syuhadah</p>
+      <p><strong>Age:</strong> 20 y/o</p>
+      <p><strong>Institution:</strong> UiTM Cawangan Kedah</p>
+      <p><strong>Hobby:</strong> Reading & Brisk Walk</p>
+
+    </div>
+  </div>
+
+  <div id="second" class="section">
+    <img src="image/sis2.jpg" alt="Second">
+    <div class="section-content">
+      <h3 class="biodata-title">2nd Sibling</h3>
+      <p><strong>Name:</strong> Nurul Hazirah</p>
+      <p><strong>Age:</strong> 19 y/o</p>
+      <p><strong>Institution:</strong> Kolej Matrikulasi Perlis</p>
+      <p><strong>Hobby:</strong> Shopping</p>
+    </div>
+  </div>
+
+  <div id="third" class="section">
+    <img src="image/sis3.jpg" alt="Third">
+    <div class="section-content">
+      <h3 class="biodata-title">3rd Sibling</h3>
+      <p><strong>Name:</strong> Nurul Hanisah</p>
+      <p><strong>Age:</strong> 12 y/o</p>
+      <p><strong>School:</strong> SK Taman Bukit Rambai</p>
+      <p><strong>Hobby:</strong> Reading</p>
+
+    </div>
+  </div>
+
+  <div id="youngest" class="section">
+    <img src="image/youngest.jpg" alt="Youngest">
+    <div class="section-content">
+      <h3 class="biodata-title">Youngest</h3>
+      <p><strong>Name:</strong> Nurul Humaira Auni</p>
+      <p><strong>Age:</strong> 9 y/o</p>
+      <p><strong>School:</strong> SK Taman Bukit Rambai</p>
+      <p><strong>Hobby:</strong> Drawing & Coloring</p>
+
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<!-- Raya Milestone -->
+<h2 class="gallery-title"> Raya Milestone</h2>
+
+  <!-- Gallery -->
+ <div class="gallery">
+
+  <!-- Item 1 -->
+  <div class="container">
+    <img src="image/raya2024.jpg" alt="Raya 2024" class="image">
+    <div class="middle">
+      <div class="text">Raya 2024</div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="container">
+    <img src="image/raya2025.jpg" alt="Raya 2025" class="image">
+    <div class="middle">
+      <div class="text">Raya 2025</div>
+    </div>
+  </div>
+
+ <!-- Item 3 -->
+  <div class="container">
+    <img src="image/raya2026.jpg" alt="Raya 2026" class="image">
+    <div class="middle">
+      <div class="text">Raya 2026</div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<br>
+<br>
+<br>
+<!-- Title -->
+<div class="gallery-section">
+  <h2> Family Gallery</h2>
+</div>
+
+  <div class="scroll-container">
+    <div class="scroll-item">
+      <img src="image/family1.jpg" alt="Family 1">
+      <p class="caption"> We visited animals farm</p>
+    </div>
+    <div class="scroll-item">
+      <img src="image/family3.jpg" alt="Family 3">
+      <p class="caption">Celebrate my mother birthday</p>
+    </div>
+
+    <div class="scroll-item">
+      <img src="image/siblings.jpg" alt="Siblings">
+      <p class="caption">Selca with siblings</p>
+    </div>
+
+    <div class="scroll-item">
+      <img src="image/family4.jpg" alt="Family 4">
+      <p class="caption">We visited the rainbow pedestrian bridge in Shah Alam</p>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<!-- Family Quote Closing -->
+<div class="family-quote">
+  <p>“Family is where life begins and love never ends.”</p>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Friends </title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Reset default margin/padding body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;          
+  margin: 0;            
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;            
+  margin: 0;              
+  padding: 10px 16px;   
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; /
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif; 
+  font-size: 20px;              
+  font-weight: 700;            
+  color: #FCEB72;              
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container untuk nama + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* Nama website di kiri */
+.site-name {
+  position: absolute;
+  left: 20px; 
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative;    
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+
+/* Banner image */
+.banner {
+  width: 100%;                        
+  height: 458px;                        
+  background-image: url("image/friends.png");
+  background-size: 100% 100%;           
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* Section selepas banner */
+.intro-section {
+  text-align: left;            
+  margin: 40px;                
+  max-width: 800px;            
+}
+
+.intro-section h1 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #FCEB72;             
+  margin-bottom: 15px;
+}
+
+.intro-section p {
+  font-size: 18px;
+  color: #333;             
+  line-height: 1.5;
+}
+
+
+/* Friend Profiles */
+.friends-profiles {
+  margin: 40px;
+}
+.friends-profiles h2 {
+  font-size: 32px;
+  color: #FCEB72;
+  margin-bottom: 20px;
+}
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.profile-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.profile-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.profile-card h3 {
+  margin: 10px 0 5px;
+  color: #333;
+}
+.profile-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Memories & Highlights */
+.memories {
+  margin: 40px;
+}
+.memories h2 {
+  font-size: 32px;
+  color: #FCEB72;
+  margin-bottom: 20px;
+}
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.memories-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.memories-grid figcaption {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 8px;
+  color: #333;
+}
+
+/* Future Plans */
+.future-plans {
+  margin: 40px;
+}
+.future-plans h2 {
+  font-size: 32px;
+  color: #FCEB72;
+  margin-bottom: 15px;
+}
+.future-plans p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer {
+  background-color: #000000; 
+  color: grey;              
+  text-align: center;
+  padding: 15px;
+  margin: 0;                 
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #ffffff;         
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+</style>
+</head>
+
+
+<body bgcolor="grey">
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="index.html">Haifa.Hamzah</a>
+    </div>
+
+  <!-- Breadcrumb menu di tengah -->
+<ul class="breadcrumb" align="center">
+   <li><a href="index.html">Home</a></li>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href="family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="interests/novel.html">Novel</a></li>
+      <li><a href="interests/music.html">Music</a></li>
+      <li><a href="interests/movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="friends.html">Friends</a></li>
+  <li><a href="cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+
+
+
+<div class="banner"></div>
+
+<!-- Section after  banner -->
+<div class="intro-section">
+  <h1>Let me introduce you to my circles</h1>
+  <p>This is a short introduction about my friends, our memories, and the special bond we share together.</p>
+</div>
+
+
+<!-- Friend Profiles -->
+<section class="friends-profiles">
+  <h2>Friend Profiles</h2>
+  <div class="profiles-grid">
+    <div class="profile-card">
+      <img src="image/pikah.jpg" alt="pikah">
+      <h3>Syafikah</h3>
+      <p>She likes kpop especially BTS</p>
+    </div>
+    <div class="profile-card">
+      <img src="image/liyana.png" alt="Liyana">
+      <h3>Liyana</h3>
+      <p>love to travel and my cafe hunting partner</p>
+    </div>
+    <div class="profile-card">
+      <img src="image/dalila.png" alt="Dalila">
+      <h3>Dalila</h3>
+      <p>She loves outdoor activities</p>
+    </div>
+  </div>
+</section>
+
+<!-- Memories & Highlights -->
+<section class="memories">
+  <h2>Memories & Highlights</h2>
+  <div class="memories-grid">
+  
+
+    <figure>
+      <img src="image/partner.jpg" alt="Cafe">
+      <figcaption>Café hunting weekend.</figcaption>
+    </figure>
+    <figure>
+      <img src="image/event.jpg" alt="Event">
+      <figcaption>Event universiti — teamwork!</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Future Plans -->
+<section class="future-plans">
+  <h2>Future Plans</h2>
+  <p> We plan to travel to Korea next year, explore culture and food, and create a vlog of our journey!</p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+
+
+
+
+
+
+
+</body>
+</html>
+
+

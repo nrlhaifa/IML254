@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Novel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Reset default margin/padding body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;            
+  margin: 0;              
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;           
+  margin: 0;              
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif; 
+  font-size: 20px;              
+  font-weight: 700;            
+  color: #FCEB72;               
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container for website name + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* website  name on left */
+.site-name {
+  position: absolute;
+  left: 20px; 
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative;    
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: url('../image/book.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.banner-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+}
+
+.banner-overlay h1 {
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 42px;
+  color: #FCEB72;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.6);
+}
+
+.banner-overlay h2 {
+  font-family: Arial, sans-serif;
+  font-size: 26px;
+  color: #C41E3A;
+  margin-bottom: 15px;
+}
+
+.banner-overlay p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.banner-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #C41E3A;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.banner-btn:hover {
+  background: #a3152d;
+}
+
+
+.intro-text {
+  text-align: left;             
+  font-family: 'Lucida Bright', serif; 
+  font-size: 20px;                 
+  color: white;                 
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  margin: 40px 0;                 
+}
+
+
+.journey-section {
+  margin: 40px 0 40px 40px;
+  max-width: 1000px;
+}
+
+.section-title {
+  text-align: left;
+  font-size: 32px;
+  color: #FCEB72;
+  margin-bottom: 25px;
+  padding-bottom: 5px;
+}
+
+.journey-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  gap: 20px; 
+}
+
+.journey-block {
+  flex: 0 0 40%;             
+  padding: 15px;
+  border-left: 6px solid #C41E3A;
+  background: #DBDBDB; 
+  border-radius: 6px;
+  text-align: left;
+}
+
+.mini-headline {
+  font-size: 22px;
+  font-weight: bold;
+  color: #CD7F32;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+text-align: center;
+}
+
+.journey-block p {
+  font-size: 16px;
+  color: black;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.highlight-title {
+  text-align: center;           
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 32px;                 
+  color: #FCEB72;                 
+  text-transform: uppercase;      
+  margin: 30px 0;                 
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6); 
+}
+
+.synopsis-table {
+  width: 80%;
+  margin: 40px auto;
+  border-collapse: separate;
+  border-spacing: 30px;
+}
+
+.synopsis-table td {
+background-color: rgba(0,0,0,0.2);
+text-align: left;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.synopsis-table td p {
+font-family: Lucida Bright', serif;
+  font-size: 20px;  
+font-weight: bold;
+color: purple;                            
+  line-height: 1.8;                          
+  text-align: justify;                       
+  margin-bottom: 10px; 
+}
+
+.synopsis-table td p,
+.synopsis-table td ul {
+  text-align: left;   
+}
+
+.synopsis-table td p strong {
+ font-family: Arial, sans-serif;
+  color: #800020; 
+  font-weight: bold;
+}
+
+/* Flip card size */
+.flip-card {
+  width: 200px;
+  height: 280px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-card-front {
+  background: #E5E4E2;
+  color: #C41E3A;
+  font-family: 'Felix Titling', serif;
+  font-size: 12px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 32px;
+  color: #FCEB72;
+  margin: 30px 0;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+.accordion {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.accordion-btn {
+  background-color: #C41E3A;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  font-family: 'Century Gothic', sans-serif;
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-btn:hover {
+  background-color: #A11A2F;
+}
+
+.accordion-content {
+  padding: 20px;
+  background-color: #C0C0C0;
+  display: none; 
+  border-radius: 5px;
+}
+
+/* Gallery for book */
+.book-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+}
+
+.book-card {
+  width: 250px;
+  text-align: center;
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.book-card img:hover {
+  transform: scale(1.05);
+}
+
+.book-card p {
+  font-family: 'Lucida Bright', serif;
+  font-size: 18px;
+  color: #A95C68;
+  line-height: 1.6;
+  margin: 5px 0;
+  text-align: justify;
+ max-width: 400px;  
+}
+
+.book-card p strong {
+  color: black;
+}
+
+.rating {
+  font-size: 30px;  
+  color: gold;       
+  font-family: Arial, sans-serif;
+}
+
+
+
+
+
+
+
+
+
+/* Footer */
+.site-footer {
+  background-color: #000000;
+  color: grey;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+.site-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+</style>
+</head>
+
+
+
+
+
+
+
+
+<body bgcolor="grey">
+
+
+<body>
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="../index.html">Haifa.Hamzah</a>
+    </div>
+
+  <!-- Breadcrumb menu -->
+<ul class="breadcrumb">
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../aboutme.html">About Me</a></li>
+  <li><a href="../education.html">Education</a></li>
+  <li><a href="../family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="../interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="novel.html">Novel</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="../friends.html">Friends</a></li>
+  <li><a href="../cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+ 
+<div class="banner">
+  <div class="banner-overlay">
+    <h1>A READER WOLRD</h1>
+    <h2>A book a day, keeps a reality away</h2>
+    <p>“That’s the thing about books. They let you travel without moving your feet.” —The Namesake by Jhumpa Lahiri<br>
+  </div>
+</div>
+
+
+<p class="intro-text">
+  Welcome to my reading corner — a space to share the stories I’m diving into now and the ones waiting on my future list
+</p>
+
+<div class="journey-section">
+  <h2 class="section-title">My Reading Journey</h2>
+
+  <div class="journey-row">
+    <div class="journey-block">
+      <h3 class="mini-headline">How I start reading</h3>
+      <p>When I was a child, my parents bought me my first novel. They wanted my siblings and me to read more, so they often gave us storybooks and comics, and sometimes even brought us to book events like Big Bad Wolf. Since then, I’ve grown deeply interested in reading, and now it has become my most cherished hobby.</p>
+    </div>
+
+
+    <div class="journey-block">
+      <h3 class="mini-headline">What book I first read</h3>
+      <p>The very first book I read was <em>Siri Ana Solehah</em> by Ana Muslim.</p>
+    </div>
+
+
+  <div class="journey-block">
+      <h3 class="mini-headline">Why I Love Reading</h3>
+      <p>I love immersing myself in stories, imagining that I am part of them as I read. Stories make me feel emotions I can relate to, and they express thoughts I sometimes struggle to put into words. Reading allows me to explore different worlds and perspectives. I am especially fond of fiction novels, as they expand my imagination endlessly.</p>
+    </div>
+
+    <div class="journey-block">
+      <h3 class="mini-headline">Exploring adaptations</h3>
+      <p>Veil of Shadows introduced me to magical realism and Cdrama worlds.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<br>
+<br>
+<h2 class="highlight-title">Highlight Section</h2>
+
+<table class="synopsis-table">
+  <tr>
+    <!-- Flip Image kiri -->
+    <td>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2>Currently<br>Reading</h2>
+          </div>
+          <div class="flip-card-back">
+            <img src="../image/norent.png" alt="Currently Reading">
+          </div>
+        </div>
+      </div>
+    </td>
+    <!-- Teks kanan -->
+    <td>
+      <p><strong>Title : </strong>Lyrics & You By NurulJannah Usop</p>
+      <p><strong> Language :</strong> English
+      <p> <strong>Genres :</strong> Love, Young Adult, Rom Com, Romance
+       <p> <strong>Year : </strong>2024
+      <p> <strong>Short Summary : </strong>Nur Edlynn, a plus-sized girl, has been secretly in love with her best friend Tengku Aqeel for years, but a youthful confession letter leads to heartbreak, and their friendship is strained for five years
+      <p> <strong>Progress : </strong> 80%</p>
+    </td>
+  </tr>
+
+  <tr>
+    <!-- Flip Image kiri -->
+    <td>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2>Future Reads</h2>
+          </div>
+          <div class="flip-card-back">
+            <img src="../image/heart.png" alt="Future Reads">
+          </div>
+        </div>
+      </div>
+    </td>
+    <!-- Teks kanan -->
+    <td>
+      <p><strong>Title : </strong>Library Of Lost Hearts by N.F. Afrina </p>
+      <p> <strong>Language :</strong> English
+      <p> <strong>Genres :</strong> Fiction, Romance, Anthologies, Short Stories
+       <p> <strong>Year : </strong>2024
+      <p> <strong>Short Summary : </strong>Library of Lost Hearts is a collection of short stories framed within an overarching narrative about a mystical moving library that tours small towns near Mount Impossible, favoring Purnama Hollow.The book mixes magical realism with emotional storytelling, exploring themes of storytelling, self-acceptance, and human connection </p>
+    </td>
+  </tr>
+</table>
+
+<div class="accordion">
+  <h2 class="section-title">Favorites & Recommendations</h2>
+
+  <!-- Favorites -->
+  <button class="accordion-btn">Favorites</button>
+  <div class="accordion-content">
+    <div class="book-gallery">
+      <!-- Buku 1 -->
+      <div class="book-card">
+        <img src="../image/fav.png" alt="Five Feet Apart">
+        <p><strong>Title:</strong> Five Feet Apart</p>
+        <p> <strong>Author: </strong>Rachael Lippincott, with contributors Mikki Daughtry and Tobias Iaconis</p>
+        <p> <strong>Publisher: </strong>Simon & Schuster Books <p/>
+        <p><strong>Language:</strong> English</p>
+        <p><strong>Genres:</strong> Romance, Young Adult, Contemporary, Fiction, Realistic Fiction
+</p>
+        <p><strong>Year:</strong> 2018</p>
+        <p><strong>Summary:</strong> a young adult novel about two teenagers with cystic fibrosis who navigate love and personal connection while adhering to strict health precautions</p>
+        <p><strong>Rating:</strong> 5/5<span class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+    </div>
+
+
+<!-- Buku 2 -->
+      <div class="book-card">
+        <img src="../image/qaid.png" alt="Qaid The Uknown">
+        <p><strong>Title:</strong> Qaid The Uknown</p>
+        <p> <strong>Author: </strong>Effalee</p>
+        <p> <strong>Publisher: </strong>Manes WordWorks </p>
+        <p><strong>Language:</strong> Malay & English</p>
+        <p><strong>Genres:</strong> Romance, Young Adult, Contemporary, Fiction, Realistic Fiction
+</p>
+        <p><strong>Year:</strong> 2025</p>
+        <p><strong>Summary:</strong> A Malaysian thriller-mystery novel by Effalee that follows the tense and complex relationship between Amra and her formidable adversary Damien Qaid as they unravel a series of mysterious murders</p>
+        <p><strong>Rating:</strong> 5/5<span class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Recommendations -->
+  <button class="accordion-btn">Recommendations</button>
+  <div class="accordion-content">
+    <div class="book-gallery">
+      <!-- Buku 3 -->
+      <div class="book-card">
+        <img src="../image/nocom.png" alt="Recommendation 1">
+        <p><strong>Title:</strong> Bright</p>
+       <p> <strong> Author : <strong> Jessica Jung </p>
+        <p><strong>Language:</strong> English</p>
+        <p><strong>Genres:</strong> Romance, Young Adult, Fiction, Music</p>
+        <p><strong>Year:</strong> 2022</p>
+        <p><p><strong>Rating:</strong> 4/5<span class="rating"> &#9733;&#9733;&#9733;&#9733;&#9734;</span></p>
+      </div>
+
+      <!-- Buku 4 -->
+      <div class="book-card">
+        <img src="../image/fav2.png" alt="Recommendation 2">
+        <p><strong>Title:</strong> Harry Potter</p>
+        <p><strong>Language:</strong> English</p>
+        <p><strong>Genres:</strong> Fantasy, Adventure</p>
+        <p><strong>Year:</strong> 1997</p>
+        <p><strong>Summary:</strong> The magical journey of a young wizard discovering friendship, courage, and destiny.</p>
+          <p><p><strong>Rating:</strong> 4/5<span class="rating"> &#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+  const accBtns = document.querySelectorAll(".accordion-btn");
+  accBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("active");
+      const content = btn.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+</footer>
+
+
+</body>
+</html>

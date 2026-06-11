@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;              
+  font-weight: 700;             
+  color: #FCEB72;              
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container untuk nama + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* Nama website di kiri */
+.site-name {
+  position: absolute;
+  left: 20px; /* letak di kiri */
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative; 
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+
+
+.welcome-banner h1 {
+  font-size: 30px;                  
+  font-family: 'Lucida Calligraphy', cursive; 
+  color: #000000;                   
+  text-align: center;               
+  letter-spacing: 4px;              
+}
+    .welcome-banner p {
+      font-size: 20px;
+      font-family: 'Arial', cursive; 
+      color: #333333;
+      text-align: center;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+/* Banner image */
+.banner {
+  width: 100%;                     
+  height: 450px;                  
+  background-image: url("image/banner2.png"); 
+  background-size: cover;         
+  background-position: center;    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: grey;
+    }
+
+    .highlights-more {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .highlights-more h2 {
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+
+    .highlights-more .subtitle {
+      font-size: 20px;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .highlights-table {
+      width: 90%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #525252;
+    }
+
+    .highlights-table td {
+      border: none;
+      padding: 20px;
+      vertical-align: top;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color:#525252; 
+    }
+
+    .highlights-table td:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .highlights-table h3 {
+      font-size: 20px;
+      margin: 10px 0;
+      color: white;
+    }
+
+    .highlights-table p {
+      font-size: 17px;
+      color: black;
+    }
+
+    .highlights-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+.site-footer {
+  background-color: #000000; 
+  color: #ffffff;           
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #ffffff;            
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+ </style>
+</head>
+
+
+<body bgcolor="grey">
+
+<body>
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="index.html">Haifa.Hamzah</a>
+    </div>
+
+  <!-- Breadcrumb menu di tengah -->
+<ul class="breadcrumb" align="right">
+   <li><a href="index.html">Home</a></li>
+  <li><a href="aboutme.html">About Me</a></li>
+  <li><a href="education.html">Education</a></li>
+  <li><a href="family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="interests/novel.html">Novel</a></li>
+      <li><a href="interests/music.html">Music</a></li>
+      <li><a href="interests/movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="friends.html">Friends</a></li>
+  <li><a href="cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+
+
+
+<audio autoplay loop hidden>
+  <source src="lofi.ogg" type="audio/ogg">
+  <source src="audio/lofi.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<div class="banner"></div>
+
+<br>
+<br>
+<div class="welcome-banner">
+    <h1>Welcome!</h1>
+    <p>Hi there! This is my personal page where I share bits of creativity and everyday inspiration</p>
+    <p>Feel free to browse through the catalogue of mine's to discover photos and more ^^ </p>
+<br>
+
+<section class="highlights-more">
+  <h2>HIGHLIGHTS</h2>
+  <p class="subtitle">A story of life,laughter,journey and little sparks of my life </p>
+
+  <table class="highlights-table">
+    <tr>
+      <td>
+        <img src="image/bookstore.jpg" alt="visit bookstore" class="highlights-img">
+        <h3>INTEREST</h3>
+        <p>Dive through her world</p>
+      </td>
+      <td>
+        <img src="image/dessert.jpg" alt="Dessert" class="highlights-img">
+        <h3>CAFE HUNTING</h3>
+        <p>Recommended cafe by me</p>
+      </td>
+      <td>
+        <img src="image/family.jpg" alt="My family" class="highlights-img">
+        <h3>FAMILY</h3>
+        <p>Get to know my dearest family</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="image/me0.jpg" alt="SPM Result" class="highlights-img">
+        <h3>EDUCATION</h3>
+        <p>Her journey in 18yo</p>
+      </td>
+      <td>
+        <img src="image/music.jpg" alt="Music" class="highlights-img">
+        <h3>FAVOURITES</h3>
+        <p>list of songs she probly replay</p>
+      </td>
+      <td>
+        <img src="image/movie.jpg" alt="Movie" class="highlights-img">
+        <h3>MOVIES</h3>
+        <p>Discover her all time favourite drama</p>
+      </td>
+    </tr>
+  </table>
+</section>
+
+
+
+<br>
+<br>
+<br>
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+
+</footer>
+
+
+  </div>
+</body>
+</html>

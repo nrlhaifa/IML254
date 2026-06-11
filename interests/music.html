@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Music</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* Reset default margin/padding body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;            
+  margin: 0;           
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+/* Breadcrumb container */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  position: relative;
+  width: 100%;           
+  margin: 0;             
+  padding: 10px 16px;     
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  box-sizing: border-box; 
+}
+
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+.site-name a {
+  font-family: 'Cinzel', serif; 
+  font-size: 20px;              
+  font-weight: 700;             
+  color: #FCEB72;            
+  text-decoration: none;
+  letter-spacing: 3px; 
+text-transform: none;
+}
+
+
+/* Container untuk nama + breadcrumb */
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  justify-content: right; 
+  position: relative;
+  background: linear-gradient(to bottom right, #000000 14%, #ffffff 100%);
+  padding: 10px 16px;
+}
+
+/* Nama website di kiri */
+.site-name {
+  position: absolute;
+  left: 20px;
+}
+
+/* Breadcrumb */
+ul.breadcrumb {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  display: inline-block; 
+  position: relative;    
+  font-size: 20px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Override untuk dropdown */
+ul.breadcrumb li.dropdown ul.dropdown-content li+li:before {
+  content: none;
+}
+
+ul.breadcrumb li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* Dropdown menu */
+ul.breadcrumb li ul.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.breadcrumb li ul.dropdown-content li {
+  display: block;
+}
+
+ul.breadcrumb li ul.dropdown-content li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+ul.breadcrumb li ul.dropdown-content li a:hover {
+  background-color: #eee;
+}
+
+/* Hover effect untuk buka dropdown */
+ul.breadcrumb li.dropdown:hover ul.dropdown-content {
+  display: block;
+}
+
+
+  .music-banner {
+      background: linear-gradient(to right, #800020, #111111);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .music-banner h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .music-banner p {
+      font-size: 20px;
+    }
+
+    /* Playlist Section */
+    .playlist-section {
+      padding: 40px;
+      background-color: #222;
+      color: #fff;
+    }
+    .playlist-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .playlist-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .playlist-card {
+      flex: 1;
+      min-width: 250px;
+      background: #333;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .playlist-card h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Album Review */
+    .album-review {
+      padding: 40px;
+      background-color: #111;
+      color: #fff;
+    }
+    .album-review h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .review-card {
+      display: flex;
+      gap: 20px;
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .review-card img {
+      width: 150px;
+      border-radius: 8px;
+    }
+    .review-text h3 {
+      margin: 0;
+    }
+
+.spotify-btn {
+  display: inline-block;
+  background: #1DB954; 
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.spotify-btn:hover {
+  background: #1ed760;
+}
+
+
+
+
+
+
+
+
+.site-footer {
+  background-color: #000000; 
+  color: grey;           
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #ffffff;         
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+<body>
+<div class="breadcrumb-container">
+  <!-- Nama website di kiri -->
+  <div class="site-name">
+      <a href="../index.html">Haifa.Hamzah</a>
+    </div>
+
+
+  <!-- Breadcrumb menu di tengah -->
+<ul class="breadcrumb" align="center">
+    <li><a href="../index.html">Home</a></li>
+  <li><a href="../aboutme.html">About Me</a></li>
+  <li><a href="../education.html">Education</a></li>
+  <li><a href="../family.html">Family</a></li>
+  <li class="dropdown">
+    <a href="../interests.html">Interests</a>
+    <ul class="dropdown-content">
+      <li><a href="novel.html">Novel</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="movie.html">Movies</a></li>
+    </ul>
+  </li>
+  <li><a href="../friends.html">Friends</a></li>
+  <li><a href="../cafe.html">Cafe Hunting</a></li>
+</ul>
+</div>
+
+ <!-- Welcome Banner -->
+  <div class="music-banner">
+    <h1>Discover the soundtrack of my life 🎶</h1>
+    <p>Welcome to my music space — where melodies meet memories.</p>
+  </div>
+
+  <!-- Personal Playlist Section -->
+  <section class="playlist-section">
+    <h2>My Personal Playlists</h2>
+    <div class="playlist-grid">
+      <div class="playlist-card">
+        <h3>Mood Booster</h3>
+      <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/75UerdhsCC9YVeHU0O1AMN?utm_source=generator" 
+          width="100%" height="352" frameborder="0" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"></iframe>
+      </div>
+      <div class="playlist-card">
+        <h3>Chill & Relax</h3>
+        <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/0UXrNzdn3rrgTljBz8WurE?utm_source=generator"
+          width="100%" height="352" frameborder="0" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"></iframe>
+      </div>
+      <div class="playlist-card">
+        <h3>Study Vibes</h3>
+   <iframe style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/6xJNgrLsrGa3QCGINxDKzy?utm_source=generator" 
+          width="100%" height="352" frameborder="0" 
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+          loading="lazy"></iframe>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Album / Song Review -->
+  <section class="album-review">
+    <h2>Album & Song Reviews</h2>
+
+    <div class="review-card">
+ <img src="../image/beauty.png" alt="Album Cover">
+  <div class="review-text">
+    <h3>Beautiful (feat. Camila Cabello)  — Song by Bazzi & Camila Cabello </h3>
+    <p>“the song explores admiration and appreciation for someone’s inner and outer beauty, making it relatable for listeners seeking a sweet, romantic tune”</p>
+    <p>Rating: ⭐⭐⭐⭐⭐</p>
+    <a href="https://open.spotify.com/embed/album/6hCR3zQtRH0IgookOYt771?utm_source=generator" target="_blank" class="spotify-btn">Listen on Spotify</a>
+  </div>
+</div>
+
+ <div class="review-card">
+ <img src="../image/sm.png" alt="Album Cover">
+  <div class="review-text">
+    <h3>There's Nothing Holding Me Back — Song by Shawn Mendes</h3>
+    <p>“ the song captures the exhilaration of falling into a liberating romance, emphasizing spontaneity and the thrill of surrendering to feelings.”</p>
+    <p>Rating: ⭐⭐⭐⭐⭐</p>
+    <a href="https://open.spotify.com/track/7JJmb5XwzOO8jgpou264Ml?si=84419631484943cd" target="_blank" class="spotify-btn">Listen on Spotify</a>
+  </div>
+</div>
+       </section>
+
+
+
+<!-- Footer -->
+<footer class="site-footer">
+  <p>&copy; 2026 Haifa's Personal Website. All rights reserved.
+     | Terms of Use
+     | Privacy Policy
+  </p>
+</footer>
+</footer>
+
+
+
+</body>
+</html>
